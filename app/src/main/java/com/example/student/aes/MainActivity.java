@@ -18,7 +18,8 @@ public class MainActivity extends AppCompatActivity {
         String password = "password";
         String message = "hello world";
         try {
-            String encryptedMsg = AESCrypt.encrypt(password, message);
+
+            String encryptedMsg = AESCrypt.encrypt(password, message); //加密
             Log.d("ENC", encryptedMsg);
         }catch (GeneralSecurityException e){
             //handle error
@@ -27,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
 
         String encryptedMsg = "2B22cS3UC5s35WBihLBo8w==";
         try {
-            String messageAfterDecrypt = AESCrypt.decrypt(password, encryptedMsg);
+            String messageAfterDecrypt = AESCrypt.decrypt(password, encryptedMsg); //解密
             Log.d("ENC", messageAfterDecrypt);
         }catch (GeneralSecurityException e){
             //handle error - could be due to incorrect password or tampered encryptedMsg
